@@ -4,10 +4,11 @@ import axios from "axios"
 import { Button, Form, Container, Header } from 'semantic-ui-react'
 
 const initialValue = {
+  reg_no: '',
   name: '',
-  age: '',
-  salary: '',
-  hobby: ''
+  state_town: '',
+  school_name: '',
+  contact_no: ''
 }
 
 function App() {
@@ -35,42 +36,51 @@ function App() {
   return (
     <div className="App">
       <Container fluid className="container">
-        <Header as='h2'>React Google Sheets!</Header>
+        <Header as='h2'>Student details Form</Header>
         <Form className="form" onSubmit={submitHandler}>
-        <Form.Field>
-            <label>Name</label>
+          <Form.Field>
+            <label>Registration Number</label>
             <input 
-             placeholder='Enter your name'
+             placeholder='Enter your Reg no.'
+             type="text" 
+             name = "reg_no" 
+             value={values.reg_no} 
+             onChange={handleChange}/>
+          </Form.Field>
+          <Form.Field>
+            <label>Names</label>
+            <input 
+             placeholder='Enter your Name'
              type="text" 
              name = "name" 
              value={values.name} 
              onChange={handleChange}/>
           </Form.Field>
           <Form.Field>
-            <label>Age</label>
+            <label>State/Town</label>
             <input 
-             placeholder='Enter your age' 
-             type="number" 
-             name = "age" 
-             value={values.age} 
-             onChange={handleChange}/>
-          </Form.Field>
-          <Form.Field>
-            <label>Salary</label>
-            <input 
-             placeholder='Enter your salary' 
-             type="number" 
-             name = "salary" 
-             value={values.salary} 
-             onChange={handleChange}/>
-          </Form.Field>
-          <Form.Field>
-            <label>Hobby</label>
-            <input 
-             placeholder='Enter your hobby' 
+             placeholder='Enter your State/Town' 
              type="text" 
-             name="hobby" 
-             value={values.hobby} 
+             name = "state_town" 
+             value={values.state_town} 
+             onChange={handleChange}/>
+          </Form.Field>
+          <Form.Field>
+            <label>Name of School</label>
+            <input 
+             placeholder='Enter your the Name of School' 
+             type="text" 
+             name = "school_name" 
+             value={values.school_name} 
+             onChange={handleChange}/>
+          </Form.Field>
+          <Form.Field>
+            <label>Contact Number</label>
+            <input 
+             placeholder='Enter your Contact No.' 
+             type="number" 
+             name="contact_no" 
+             value={values.contact_no} 
              onChange={handleChange}/>
           </Form.Field>
           
